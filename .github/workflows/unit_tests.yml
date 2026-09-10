@@ -1,11 +1,11 @@
 name: Unit tests
 on:
   workflow_dispatch:
-  push:
-    branches: ["develop"]
-  pull_request:
-    branches:
-      - "develop"
+  # push:
+  #   branches: ["develop"]
+  # pull_request:
+  #   branches:
+  #     - "develop"
 
 concurrency:
   group: "${{ github.ref }}"
@@ -17,7 +17,6 @@ jobs:
     strategy:
       matrix:
         image:
-          - version: "12.2"
           - version: "13.0"
         build:
           - type: "static"
